@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row min-vh-75 align-items-center py-5">
+    <div class="col-lg-10 mx-auto text-center">
+        <h1 class="display-3 fw-bold mb-4">
+            <span class="gradient-text">Absolute Privacy</span>
+            <br>for Your Digital Assets
+        </h1>
+        <p class="lead text-muted mb-5 mx-auto" style="max-width: 600px;">
+            Securely share sensitive files with end-to-end encryption.
+            Disposable links ensure your data leaves no digital footprint.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="{{ url_for('register') }}" class="btn btn-primary btn-lg px-5 rounded-pill shadow-sm">
+                Get Started Free
+            </a>
+            <a href="{{ url_for('login') }}" class="btn btn-outline-primary btn-lg px-5 rounded-pill">
+                Sign In
+            </a>
+        </div>
+
+        <div class="row mt-5 pt-5 g-4">
+            <div class="col-md-4">
+                <div class="premium-card h-100 border-0 shadow-sm p-4">
+                    <div class="h3 text-primary mb-3"><i class="bi bi-shield-check"></i></div>
+                    <h5 class="fw-bold">Vault Security</h5>
+                    <p class="small text-muted mb-0">Advanced AES-128 encryption keeps your files private even if
+                        storage is compromised.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="premium-card h-100 border-0 shadow-sm p-4">
+                    <div class="h3 text-primary mb-3"><i class="bi bi-clock-history"></i></div>
+                    <h5 class="fw-bold">Self-Destruction</h5>
+                    <p class="small text-muted mb-0">Set precise download limits and time-based expiry for total
+                        post-share control.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="premium-card h-100 border-0 shadow-sm p-4">
+                    <div class="h3 text-primary mb-3"><i class="bi bi-lightning-charge"></i></div>
+                    <h5 class="fw-bold">Instant Sharing</h5>
+                    <p class="small text-muted mb-0">Generate secure, zero-dependency download links in milliseconds.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .min-vh-75 {
+        min-height: 75vh;
+    }
+</style>
+{% endblock %}
