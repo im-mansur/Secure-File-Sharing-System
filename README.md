@@ -1,54 +1,196 @@
-# 🔐 SecureShare (Premium File Sharing System)
+<!-- ================= Animated Header ================= -->
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F2027,50:203A43,100:2C5364&height=220&section=header&text=SecureShare&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Premium%20Encrypted%20File%20Sharing%20System&descAlignY=55&descAlign=50" />
+</p>
 
-A high-performance, secure web application for encrypting and sharing files with exact calendar-based time-limited access.
+<h1 align="center">🔐 SecureShare</h1>
+<h3 align="center">Privacy-Focused • AES-128 Encrypted • Time-Limited Access</h3>
 
-## ✨ Key Features
-- **Zero-Install Database**: Uses SQLite for a portable, serverless experience.
-- **AES-128 Encryption**: Files are encrypted using the Fernet (Symmetric Encryption) standard.
-- **Secure Authentication**: User passwords are securely hashed using `bcrypt`.
-- **Premium UI**: Modern Glassmorphism design with a dark-themed aesthetic.
-- **Auto-Cleanup**: Background task automatically deletes expired files and records.
-- **Secure Links**: URL-safe tokens with configurable download limits and exact calendar-based expiry dates/times.
+<!-- Typing Animation -->
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?color=00C2FF&size=22&center=true&vCenter=true&width=700&lines=Encrypted+File+Storage;Secure+Token-Based+Sharing;Calendar-Based+Expiry;Auto-Cleanup+System;Cybersecurity+Focused+Architecture" />
+</p>
 
-## 📂 Project Structure
+---
+
+# 🚀 Overview
+
+SecureShare is a **high-performance encrypted file sharing web application** that allows users to securely upload, encrypt, and share files with exact calendar-based expiry time and download limits.
+
+Designed for:
+
+- 🔐 Maximum privacy  
+- ⚡ Fast secure access  
+- 🧠 Smart automated cleanup  
+- 🎨 Premium UI experience  
+
+---
+
+# 🧱 Complete Tech Stack
+
+<p align="center">
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite)
+![MySQL](https://img.shields.io/badge/MySQL-00758F?style=for-the-badge&logo=mysql&logoColor=white)
+![AES-128](https://img.shields.io/badge/Encryption-AES--128-blue?style=for-the-badge)
+![Fernet](https://img.shields.io/badge/Fernet-Symmetric%20Encryption-success?style=for-the-badge)
+![bcrypt](https://img.shields.io/badge/Auth-bcrypt-green?style=for-the-badge)
+![APScheduler](https://img.shields.io/badge/Scheduler-APScheduler-orange?style=for-the-badge)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
+![Uvicorn](https://img.shields.io/badge/Uvicorn-000000?style=for-the-badge)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+
+</p>
+
+---
+
+# ✨ Key Features
+
+### 🔐 AES-128 File Encryption
+- Fernet symmetric encryption
+- Unique encryption key per file
+- Encrypted at rest storage
+
+### 🔑 Secure Authentication
+- bcrypt password hashing
+- Secure session handling
+- Protected user vault
+
+### ⏳ Calendar-Based Expiry
+- Set exact expiry date & time
+- Download limits
+- Optional one-time download
+
+### 🗑️ Auto Cleanup System
+- Background scheduler
+- Deletes expired files automatically
+- Cleans database records
+
+### ⚡ Optimized Database Indexing
+- Token index for fast lookup
+- Expiry index for cleanup efficiency
+- User-based indexing for dashboard
+
+---
+
+# 🗄️ Database Architecture
+
+### Users Table
+- id  
+- username  
+- email  
+- password_hash  
+- created_at  
+
+### Files Table
+- id  
+- user_id  
+- original_name  
+- stored_name  
+- encryption_key  
+- token  
+- expiry_time  
+- download_count  
+- max_downloads  
+- upload_time  
+
+### Indexing Strategy
+- INDEX on token  
+- INDEX on expiry_time  
+- INDEX on user_id  
+- Composite INDEX (token, expiry_time)  
+
+---
+
+# 🔄 System Workflow
+
+1️⃣ User uploads file  
+2️⃣ File encrypted using AES-128  
+3️⃣ Encrypted file stored in `/encrypted_files/`  
+4️⃣ Metadata stored in SQLite  
+5️⃣ Secure token generated  
+6️⃣ On access → token + expiry validated  
+7️⃣ File decrypted and served  
+8️⃣ Background scheduler deletes expired files  
+
+---
+
+# 📂 Project Structure
+
 ```text
-secure_file_share/
-├── app.py                 # Core Flask Application & Scheduler
-├── config.py              # Configuration & Path Management
-├── database.db            # SQLite Database (Auto-created in /database)
-├── requirements.txt       # Project Dependencies
+SecureShare/
+│
+├── app.py
+├── config.py
 ├── database/
-│   ├── schema.sql         # Database Table definitions
-│   └── database.db        # Live Database file
+│   ├── schema.sql
+│   └── database.db
+├── encrypted_files/
 ├── static/
 │   └── css/
-│       └── premium.css    # Custom Premium Design System
-├── templates/             # HTML Templates (Gradients & Glassmorphism)
+├── templates/
 └── utils/
-    ├── db.py              # Database initialization & connection logic
-    └── encryption.py      # AES Encryption/Decryption utilities
 ```
 
-## 🚀 Quick Start
+---
 
-### 1. Install Requirements
+# ▶️ Installation & Setup
+
 ```bash
+git clone https://github.com/yourusername/SecureShare.git
+cd SecureShare
 pip install -r requirements.txt
-```
-
-### 2. Run the App
-```bash
 python app.py
 ```
 
-### 3. Use the System
-Open **[http://127.0.0.1:5000](http://127.0.0.1:5000)** to:
-- **Register/Login**: Access your private vault.
-- **Upload**: Select a file, set "Max Downloads" and a specific calendar "Expiry Date & Time", then Encrypt.
-- **Share**: Copy the generated link and send it securely.
+Open:
 
-## 🛡️ Security Note
-All files are stored as `.enc` binaries in the `encrypted_files/` directory. They cannot be opened without the unique database-stored encryption keys.
+```
+http://127.0.0.1:5000
+```
 
 ---
-*Created with focus on privacy and user experience.*
+
+# 🛡️ Security Design
+
+- 🔐 Encryption at Rest  
+- 🔑 Unique File-Level Keys  
+- ⏳ Expiry-Based Access Control  
+- 📊 Download Count Enforcement  
+- 🧹 Automated Expired Data Deletion  
+- ⚡ Indexed Secure Lookup  
+
+---
+
+# 🔮 Future Enhancements
+
+- ☁️ AWS S3 Cloud Storage  
+- 📧 Secure Email Link Sharing  
+- 📊 Admin Analytics Dashboard  
+- 📱 Mobile Optimization  
+- 🔐 Two-Factor Authentication  
+
+---
+
+# 🎓 Project Type
+
+Cybersecurity System  
+Full Stack Web Application  
+Portfolio + Production Prototype  
+
+---
+
+<p align="center">
+  ⭐ If you like this project, give it a star!
+</p>
+
+<!-- ================= Footer Wave ================= -->
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:2C5364,100:0F2027&height=150&section=footer"/>
+</p>
