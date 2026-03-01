@@ -144,7 +144,7 @@ SecureShare/
 
 ```bash
 git clone https://github.com/im-mansur/Secure-File-Sharing-System.git
-cd SecureShare
+cd Secure-File-Sharing-System
 pip install -r requirements.txt
 python app.py
 ```
@@ -194,5 +194,6 @@ Portfolio + Production Prototype
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:2C5364,100:0F2027&height=150&section=footer"/>
 </p>
+
 
 
