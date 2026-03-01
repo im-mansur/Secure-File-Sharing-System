@@ -179,7 +179,7 @@ http://127.0.0.1:5000
 ---
 ## 📸 Screenshots
 
-![Dashboard Preview](https://github.com/im-mansur/Smart-Demand-Forecasting-System-for-Essential-Store/blob/main/preview.png)
+![Dashboard Preview](https://github.com/im-mansur/Secure-File-Sharing-System/blob/main/preview.png)
 ---
 
 # 🎓 Project Type
@@ -198,6 +198,7 @@ Portfolio + Production Prototype
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:2C5364,100:0F2027&height=150&section=footer"/>
 </p>
+
 
 
 
